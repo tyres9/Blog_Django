@@ -1,29 +1,28 @@
 {% extends "blog/base.html" %}
 {%block content%}
-          <div class="row">
-            {% for post in posts %}
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card mb-5 shadow-sm">
-                <img src="imgs/a.jpg" class="img-fluid" />
-    
-                <div class="card-body">
-                  <div class="card-title">
-                    <h2>{{post.title}}</h2>
-                  </div>
-                  <div class="card-subtitle text-muted">
-                    <h6> by {{post.author}} on {{post.date_posted}} </h6>
-                  </div>  
-                  <div class="card-text">
-                    <p>                       
-                        {{post.content}}      
-                    </p>
-                  </div>
-                  <a href="#" class="btn btn-outline-primary rounded-0 float-end"
-                    >Read More</a
-                  >
-                </div>
-              </div>
-            </div>
-             {% endfor %}
-            
+<div class="row">
+  {% for post in posts %}
+  <div class="col-lg-4 col-md-6 col-sm-12">
+    <div class="card mb-5 shadow-sm">
+      <img src="imgs/a.jpg" class="img-fluid" />
+
+      <div class="card-body">
+        <div class="card-title">
+          <h2>{{post.title}}</h2>
+        </div>
+        <div class="card-subtitle text-muted">
+          <h6> by {{post.author}} on {{post.date_posted}} </h6>
+        </div>  
+        <div class="card-text">
+          <p>                       
+              {{post.content}}      
+          </p>
+        </div>
+        <a href="#" class="btn btn-outline-primary rounded-0 float-end"
+          >Read More</a
+        >
+      </div>
+    </div>
+  </div>
+{% endfor %}            
 {%endblock content%}
