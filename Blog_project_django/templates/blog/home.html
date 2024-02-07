@@ -10,8 +10,9 @@
         <div class="card-title">
           <h2>{{post.title}}</h2>
         </div>
-        <div class="card-subtitle text-muted">
-          <h6> by {{post.author}} on {{post.date_posted|date:"F d ,Y"}} </h6>
+        <div class="card-subtitle text-muted" style = "display: inline;">
+           <img src="{{ post.author.profile.image.url }}" class="rounded-circle" style = "float:left; height:1em;"> 
+           <h6>  {{ post.author}} on {{post.date_posted|date:"F d ,Y"}} </h6>
         </div>  
         <div class="card-text">
           <p>                       
