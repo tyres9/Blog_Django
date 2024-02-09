@@ -4,7 +4,7 @@
 
 
     <div class="card mb-5 shadow-sm">
-      <img src="imgs/a.jpg" class="img-fluid" />
+      <!-- <img src="imgs/a.jpg" class="img-fluid" />  -->
       <div class="card-body">
         <div class="card-title">
           <h2>{{object.title}}</h2>
@@ -18,7 +18,16 @@
               {{object.content}}      
           </p>
         </div>
-
+      </div>
+      {% if object.author == user %}
+      <a class ="btn btn-secondary bnt-sm mt-1 mb-1" href="{% url 'post-update' post.id %}" class="btn btn-outline-primary rounded-0 float-end"
+        >Update</a
+      >
+      <a class="btn btn-danger bnt-sm mt-1 mb-1" href="{% url 'post-delete' post.id %}" class="btn btn-outline-primary rounded-0 float-end"
+      >Delete</a
+    >
+      {% endif %}
+    </div>
 
 
     </div>
