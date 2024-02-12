@@ -1,5 +1,6 @@
 {% extends "blog/base.html" %}
 {%block content%}
+<h1 class = "mb-3">Posts bt {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
 <div class="row">
   {% for post in posts %}
   <div class="col-lg-4 col-md-6 col-sm-12">
@@ -12,8 +13,7 @@
         </div>
         <div class="card-subtitle text-muted" style = "display: inline;">
            <img src="{{ post.author.profile.image.url }}" class="rounded-circle" style = "float:left; height:1em;"> 
-           <h5> <a href="{% url 'user-posts' post.author.username %}">  {{ post.author}}  </a></h5>
-            <small> on {{post.date_posted|date:"F d ,Y"}} </small>
+           <h6>  {{ post.author}} on {{post.date_posted|date:"F d ,Y"}} </h6>
         </div>  
         <div class="card-text">
           <p>                       
